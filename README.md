@@ -1,7 +1,15 @@
 # doc88Download
 不让爷下载，爷偏要下 python给爷爬
 
-使用python下载道客巴巴文件并自动合并为pdf
+
+道客巴巴的文档在手机端有三种 1 没有手机端 2 一页是一张gif 3 一页由四张gif组合而成
+
+
+第二种的方式用doc88.py就可下载
+第三种使用downloadsmallgif.py下载全部gif，使用imgswitch.py拼接gif，gif再拼pdf
+
+
+使用python下载道客巴巴gif文件并自动合并为pdf
 
 使用前请先确保安装了必要的库：
 
