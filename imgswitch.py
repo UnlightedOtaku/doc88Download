@@ -2,7 +2,10 @@ import PIL.Image as Image
 import os
 
 IMAGES_PATH = './'  # 图片集地址
-IMAGE_SIZE = 600  # 每张小图片的大小
+# ==============
+# 记得改这个大小 不然图片会很模糊
+IMAGE_SIZE = 960  # 每张小图片的大小
+# ==============
 IMAGE_ROW = 2  # 图片间隔，也就是合并成一张图后，一共有几行
 IMAGE_COLUMN = 2  # 图片间隔，也就是合并成一张图后，一共有几列
 IMAGE_SAVE_PATH = './demo.gif'  # 图片转换后的地址
