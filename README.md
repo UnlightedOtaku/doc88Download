@@ -17,11 +17,19 @@
 
 
 
-第2种方式 可以尝试一下使用doc88.py
+**第2种** 可以尝试一下使用doc88.py
+使用python下载道客巴巴gif文件并自动合并为pdf
+
+使用前请先确保安装了必要的库：
+
+pip install PyMuPDF
+
+pip install requests
+
+没有python的可以直接下exe, 不保证可以运行
 
 
-
-第3种的先用downloadsmallgif.py 下载小图片然后用imgswitch.py对图片进行拼接。
+**第3种**的先用downloadsmallgif.py 下载小图片然后用imgswitch.py对图片进行拼接。
 
 注意：downloadsmallgif.py和imgswitch.py仅为简单演示 并没有创建文件夹等操作并且imgswitch.py也仅仅合并了第一页的gif，后续合并其他页的gif和合并pdf请自便。
 
