@@ -1,73 +1,29 @@
 # doc88Download
+
 不让爷下载，爷偏要下 python给爷爬
 
 
 -----------------------------------------------------------------------------
 
-更新
+说明
 
-道客巴巴的文档在手机端有三种 1 没有手机端 2 一页是一张gif 3 一页由四张gif组合而成
+道客巴巴的文档在手机端有三种 
+
+1 没有手机端（那用我的代码肯定爬不了） 
+
+2 一页是一张gif     
+
+3 一页由四张gif组合而成
 
 
-第二种的方式用doc88.py就可下载
-第三种使用downloadsmallgif.py下载全部gif，使用imgswitch.py拼接gif，gif再拼pdf
 
------------------------------------------------------------------------------
+第2种方式 可以尝试一下使用doc88.py
 
-使用python下载道客巴巴gif文件并自动合并为pdf
 
-使用前请先确保安装了必要的库：
 
-pip install PyMuPDF
+第3种的先用downloadsmallgif.py 下载小图片然后用imgswitch.py对图片进行拼接。
 
-pip install requests
-
-没有python的可以直接下[exe](https://github.com/UnlightedOtaku/doc88Download/releases/download/1.0/doc88.exe),
-不保证可以运行
-
-代码很丑 只考虑了怎么有python复现js逻辑没注意别的
-
-### **流程：访问构造的url获取base64编码后的值 将其解码 获取gif链接 下载gif 拼接gif为pdf**
-
-**爬取地址来源电脑端不太好爬** 
-
-**爬移动端 把网址的www改成m 再把UA改成移动端的（这一步浏览器不是很好用 我用的burp改的）**
-
-只有一个js 文件（太棒了）
-
-从js中找图片的地址 以下为大致过程 **可不看**
-
-查找img 没有src 
-
-查找src 找到
-
-var gif_url = gif_host+"/get-"+pageinfo.url+".gif";
-
- $('#page-index-'+page).attr('src',gif_url);
-
-再找gif_host和pageinfo.url
-
-gif_host = 'https://gif.doc88.com'
-
-pageinfo来自pageinfos[n]
-
-pageinfos = JSON.parse(struct);  
-
-var struct = jsonRes.struct;
-
-var jsonRes = JSON.parse(base64Str);
-
-var base64Str = m_decodeBase64(data);
-
-一路找下来 
-
-m_decodeBase64是个变体base64编码（想办法把这个js代码自己转换为python代码）
-
-data为ajax返回数据
-
-url = '/doc.php?act=info&p_code='+3995949474894+'&key=3854933de90d1dbb321d8ca29eac130a&v=1'
-
-pcode就是页面代号 如  https://m.doc88.com/p-3995949474894.html 就是3995949474894
+注意：downloadsmallgif.py和imgswitch.py仅为简单演示 并没有创建文件夹等操作并且imgswitch.py也仅仅合并了第一页的gif，后续合并其他页的gif和合并pdf请自便。
 
 
 
